@@ -1,4 +1,4 @@
-# robo-bat
+# RoboBat
 
 In this activity, you will learn how sound waves interact with objects, and with different types of materials. You and a friend can experiment with different items and materials to see how a bat’s echolocation interacts with them.
 
