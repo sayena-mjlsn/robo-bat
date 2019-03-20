@@ -5,9 +5,6 @@ final int ARDUINO_SERIAL_PORT_INDEX = 7; // may need to change '[7]' with '[Ardu
 
 int MaxRuler = 9; // the max number shown on the ruler
 
-boolean Reflective = true;  // if the item is reflective show the reflected signals
-float Scale = 0.00;
-
 float _currentDist = 0.0; // distance detected by arduino in 'inches'
 float BtnX = 1114;  // 'x' value of pause/play button
 float BtnY = 64;     // 'y' value of pause/play button
@@ -20,6 +17,7 @@ float [] BatY = new float[6]; // 'y' value of bat images in the background
 float Height;  // height of the screen
 float Angle;  // angle of the flying bats shown in the background
 float Value = 0.0;  // the received value mapped to the size of the ruler on the screen
+float Scale = 0.00;  // to make the signals bigger as they increase
 
 String inString = null;  //  the input received from arduino
  
@@ -27,6 +25,7 @@ boolean Reading = true;  // to receive data from arduino
 boolean Paused = false;  // to freeze the screen and pause the reading process
 boolean HiddenValue = false;  // to work with the distance within the visual constraints of the interface
 boolean Toggle = false;  // Toggle button to turn signals on/off
+boolean Reflective = true;  // if the item is reflective show the reflected signals
 
 PImage[] bat = new PImage[8];
 PImage bg; 
@@ -40,11 +39,10 @@ PImage SadBat;
 PImage Signal;
 PImage SentSignal;
 PImage ReflectedSignal;
-PImage playtext;
-PImage pausetext;
 PImage ToggleOff;
 PImage ToggleOn;
 PImage PausedBackground;
+PImage signaltext;
 
 PFont f;
 
@@ -66,11 +64,10 @@ void setup(){
   SadBat = loadImage("sad-bat.png");  // the main bat character-second version
   SentSignal = loadImage("signa-1.png");  // sent signals in yellow
   ReflectedSignal = loadImage("signa-rec.png");  // reflected signals in blue
-  playtext = loadImage("play-text.png");   // label of the play button
-  pausetext = loadImage("pause-text.png");  // label of the pause button
   ToggleOff = loadImage("toggle-off.png");  // toogle switch off
   ToggleOn = loadImage("toggle-on.png");    // toggle switch on
   PausedBackground = loadImage("rec-paused.png");  // paused background of the data that is being read
+  signaltext = loadImage("signal-text.png");  // label of the signal button
 
   _serialPort = new Serial(this, Serial.list()[ARDUINO_SERIAL_PORT_INDEX], 9600); //open the serial port
   
@@ -110,7 +107,8 @@ void draw(){
     if (!Paused){ 
     // change the pause/play button
     image(Pause,BtnX,BtnY, 21 ,21);
-    image(pausetext,BtnX-9,117, 40 ,21);
+    fill( 245,232,159);  // define button label color
+    text("PAUSE",BtnX-25,135);
     if(mousePressed){
       if(mouseX>BtnX && mouseX <BtnX+54 && mouseY>BtnY && mouseY <BtnY+54){
          println("----Pause button has been clicked----");
@@ -124,8 +122,10 @@ void draw(){
  /*resuming the process*/
  else {
     // change the pause/play button
+    smooth(); 
     image(Play,BtnX+2,BtnY, 21 ,21); 
-    image(playtext,BtnX-8,117, 40 ,21); 
+    fill( 245,232,159);  // define button label color
+    text("RESUME",BtnX-34,135);
     image(PausedBackground,964,670, 162.39 ,66); 
     if(mousePressed){
       if(mouseX>BtnX && mouseX <BtnX+54 && mouseY>BtnY && mouseY <BtnY+54){
@@ -137,10 +137,12 @@ void draw(){
    } 
  }
  
- 
+ fill( 245,232,159); // define button label color
+ text("SIGNAL",ToggleX+20,135);
  /*Turning the signal button on/off*/
  if (!Toggle){  // turning off the signal button
- image(ToggleOff,ToggleX,ToggleY, 106 ,54); 
+ smooth();
+ image(ToggleOff,ToggleX,ToggleY, 113 ,59); 
  if(mousePressed){
   if(mouseX>ToggleX && mouseX <ToggleX+106 && mouseY>ToggleY && mouseY <ToggleY+54){
    println("----Signal button has been turned on---");
@@ -152,7 +154,7 @@ void draw(){
  }
  
  else {  // turning on the signal button
-   image(ToggleOn,ToggleX,48, 108 ,57); 
+   image(ToggleOn,ToggleX,48, 113 ,59); 
    if(mousePressed){
      if(mouseX>ToggleX && mouseX <ToggleX+106 && mouseY>ToggleY && mouseY <ToggleY+54){
        println("----Signal button has been turned off---");
@@ -239,8 +241,8 @@ void GenerateText(int r, int g, int b){
 }
 
 
-/* show signals */
-void Signal_1(){ 
+/* show sent signals */
+void Signal_1(){  
   Scale = 0.1;  // define the size of the signals as they are generated on the screen
   int fixedheight = 405;  // height of the first signal
   Reflective = true;  
@@ -264,7 +266,7 @@ void Signal_1(){
        }
     }
 }
-    
+  /* show received signals */  
   void Signal_2(){   
     if (Reflective){
     Scale = 0.2;
@@ -283,5 +285,21 @@ void Signal_1(){
   }
 }
     
+}
+
+/* triggers the pause/play button when pressing the spacebar */
+void keyReleased() {   
+  if (key == ' ') {
+     if (!Paused){
+       Paused = true;
+       Reading = false;
+       delay(30);
+     }
+    else{
+      Paused = false;
+      Reading = true;
+      delay(30);
+    }
+  }
 }
   
