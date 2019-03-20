@@ -19,7 +19,7 @@ Clone or download the files. To download the files, click on the **Clone or Down
 3. Open **robo-bat-arduino.ino** available in the **robo-bat-arduino** folder
 4. Upload the file
 
-# Testing Arduino
+### Testing Arduino
 
 To make sure that the Arduino code is running, follow the following steps:
 1. Go to **Tools**
