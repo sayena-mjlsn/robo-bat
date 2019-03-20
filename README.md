@@ -1,11 +1,11 @@
 # robo-bat
 
-In this activity, you will learn how sound waves interact with objects, and with different types of materials. You and a friend can experiment with different items and materials to see how
-a bat’s echolocation interacts with them.
+In this activity, you will learn how sound waves interact with objects, and with different types of materials. You and a friend can experiment with different items and materials to see how a bat’s echolocation interacts with them.
 
 ## Getting Started
-To get started, make sure that the ultrasonic sensor is appropriately connected to the Ardunio Uno. To run the Arduino code, connect the Arduino’s **Pin 12** to the sensor’s
-**Trig Pin** and connect the Arduino’s **Pin ~11** to the sensor’s **Echo Pin**.
+To get started, make sure that the ultrasonic sensor is appropriately connected to the Ardunio Uno.
+
+To run the Arduino code, connect the Arduino’s **Pin 12** to the sensor’s **Trig Pin** and connect the Arduino’s **Pin ~11** to the sensor’s **Echo Pin**.
 
 ### Prerequisites
 
@@ -21,7 +21,7 @@ Clone or download the files. To download the files, click on the **Clone or Down
 
 ## Testing Arduino
 
-To make sure that the Arduino code is running, follow the following steps.
+To make sure that the Arduino code is running, follow the following steps:
 1. Go to **Tools**
 2. Click on **Serial Monitor**
 If you see the arduino output, then you have successfully executed the code.
