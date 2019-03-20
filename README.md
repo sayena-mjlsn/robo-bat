@@ -40,3 +40,5 @@ If you cannot see the output, go to the **Prerequisites** section and make sure 
 ```final int ARDUINO_SERIAL_PORT_INDEX = 7;```
 
 5. Run the code
+
+![hi](https://github.com/sayena-mjlsn/robo-bat/blob/master/robo_bat_processing/Demo.png)
