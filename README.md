@@ -11,7 +11,7 @@ To run the Arduino code, connect the Arduino’s **Pin 12** to the sensor’s **
 
 Clone or download the files. To download the files, click on the **Clone or Download** button. Then, download the files as a Zip and extract the Zip file.
 
-### Executing Arduino code
+## Executing Arduino code
 
 
 1. Download the Arduino IDE available at https://www.arduino.cc/en/Main/Software
@@ -19,7 +19,7 @@ Clone or download the files. To download the files, click on the **Clone or Down
 3. Open **robo-bat-arduino.ino** available in the **robo-bat-arduino** folder
 4. Upload the file
 
-## Testing Arduino
+# Testing Arduino
 
 To make sure that the Arduino code is running, follow the following steps:
 1. Go to **Tools**
