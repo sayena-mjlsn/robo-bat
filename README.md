@@ -7,7 +7,7 @@ To get started, make sure that the ultrasonic sensor is appropriately connected 
 
 To run the Arduino code, connect the Arduino’s **Pin 12** to the sensor’s **Trig Pin** and connect the Arduino’s **Pin ~11** to the sensor’s **Echo Pin**.
 
-### Prerequisites
+## Prerequisites
 
 Clone or download the files. To download the files, click on the **Clone or Download** button. Then, download the files as a Zip and extract the Zip file.
 
