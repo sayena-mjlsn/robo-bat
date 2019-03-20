@@ -34,5 +34,7 @@ If you cannot see the output, go to the **Prerequisites** section and make sure 
 2. Install the IDE
 3. Open **robo-bat-processing.pde** available in the **robo-bat-processing** folder
 4. Go to **line 4** and make sure that **ARDUINO_SERIAL_PORT_INDEX** is has the correct value of the Arduino port based on your computer/laptop.
-```final int ARDUINO_SERIAL_PORT_INDEX = 7; // may need to change '[7]' with '[Arduino_port_on_Processing]'```
+
+```final int ARDUINO_SERIAL_PORT_INDEX = 7;```
+
 5. Run the code
