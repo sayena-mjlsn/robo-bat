@@ -26,6 +26,7 @@ To make sure that the Arduino code is running, follow the following steps:
 1. Go to **Tools**
 2. Click on **Serial Monitor**
 If you see the arduino output, then you have successfully executed the code.
+
 **Now make sure that you close the Serial Monitor before running the processing code.**
 
 If you cannot see the output, go to the **Prerequisites** section and make sure that you have followed the instructions.
