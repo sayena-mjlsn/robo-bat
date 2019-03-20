@@ -17,7 +17,8 @@ Clone or download the files. To download the files, click on the **Clone or Down
 1. Download the Arduino IDE available at https://www.arduino.cc/en/Main/Software
 2. Install the IDE
 3. Open **robo-bat-arduino.ino** available in the **robo-bat-arduino** folder
-4. Upload the file
+4. From the **Tools** menu, navigate to **Port** and select the serial port for **the Arduino Uno**
+5. Upload the code to your microcontroller by clicking on the **Upload** button
 
 ### Testing Arduino
 
