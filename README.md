@@ -41,3 +41,7 @@ If you cannot see the output, go to the **Prerequisites** section and make sure 
 
 5. Run the code
 
+### Demo
+You should be able to see the following interface if you successfully execute the code. If not, please make sure that you have followed the instructions.
+
+![hi](https://github.com/sayena-mjlsn/robo-bat/blob/master/robo_bat_processing/Demo.png)
